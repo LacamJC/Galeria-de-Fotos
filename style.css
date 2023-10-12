@@ -1,0 +1,162 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-galeria
+{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 300px;
+    padding: 5px;
+    grid-gap: 5px;
+    width: 90%;
+    margin:  auto;
+}
+
+.item-galeria
+{
+    position: relative;
+    background-color: rgba(0, 0, 255, 0.548);
+
+    cursor: pointer;
+}
+
+.item-galeria img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.item-galeria .title-galeria
+{
+    display: off;
+    opacity: 0;
+
+    position: absolute;
+    background-color: rgba(0, 0,0,0.8);
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white ;
+    padding: 10pt;
+    font-size: 16px;
+
+    transition: 0.5s linear;
+}
+
+.item-galeria:hover .title-galeria
+{
+    position: absolute;
+    background-color: rgba(0, 0,0,0.8);
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white ;
+    padding: 10pt;
+    font-size: 16px;
+    opacity: 1;
+}
+
+.h-1
+{
+    grid-row: span 1;
+}
+
+.h-2
+{
+    grid-row: span 2;
+}
+
+.w-1
+{
+    grid-column: span 1;
+}
+
+
+.w-2 
+{
+    grid-column: span 2;
+}
+
+.next
+{
+    font-size: 2em;
+    color: black;
+    text-decoration: none;
+    margin: 10px;
+}
+
+@media(min-width:300px) and (max-width:590px)
+{
+    .container-galeria
+    {
+        grid-template-columns: repeat(1,1fr);
+    }
+
+    .item-galeria
+    {
+        background-color: yellow;
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
+}
+
+@media(min-width: 600px) and (max-width:900px)
+{
+    .container-galeria
+    {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .item-galeria
+    {
+        grid-column: span 1;
+        grid-row: span 1;
+
+        background-color: green;
+    }
+}
+
+@media(min-width:1024px) and (max-width: 1030px)
+{
+    .container-galeria
+    {
+        grid-template-columns: repeat(4,1fr);
+    }
+    
+    .item-galeria
+    {
+        background-color: red;
+    }
+
+    .item-galeria:nth-child(1)
+    {
+        grid-column: span 1; /*Muda a HORIZONTAL*/
+        grid-row: span 1; /*Muda a VERTICAL*/
+    }
+
+    .item-galeria:nth-child(2)
+    {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+
+    .item-galeria:nth-child(4)
+    {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+}
